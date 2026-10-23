@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173d2b">
+  <meta name="description" content="Discover fresh coffee, delicious food and cozy moments at Bean & Bloom Cafe.">
+  <title>Bean & Bloom | Cafe & Kitchen</title>
+
+  <style>
+    :root {
+      --green: #173d2b;
+      --cream: #faf7ef;
+      --orange: #d88b50;
+      --text: #282d25;
+      --muted: #6d7168;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 75px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    header {
+      background: var(--green);
+      color: white;
+      padding: 15px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 17px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #f2c59f;
+    }
+
+    .hero {
+      background: var(--green);
+      color: white;
+      padding: 65px 7% 75px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .eyebrow {
+      color: #f2c59f;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.08;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      color: #e1e7dd;
+      margin-bottom: 25px;
+      max-width: 450px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: none;
+      background: var(--orange);
+      color: #21190f;
+      text-decoration: none;
+      padding: 13px 21px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      filter: brightness(1.08);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 48% 48% 15px 15px;
+    }
+
+    section {
+      padding: 65px 7%;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .food-card {
+      background: white;
+      border-radius: 13px;
+      overflow: hidden;
+      border: 1px solid #eee9df;
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .food-info {
+      padding: 18px;
+    }
+
+    .food-info h3 {
+      color: var(--green);
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .food-info p {
+      color: var(--muted);
+      font-size: 14px;
+      min-height: 45px;
+    }
+
+    .price {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+      color: #a65e27;
+    }
+
+    .about {
+      background: #eee9dc;
+      text-align: center;
+    }
+
+    .about-inner {
+      max-width: 680px;
+      margin: auto;
+    }
+
+    .about h2,
+    .contact h2 {
+      color: var(--green);
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    .about p {
+      color: #575d52;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 9px 0;
+      color: var(--muted);
+    }
+
+    .contact .btn {
+      margin-top: 18px;
+    }
+
+    footer {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 24px 15px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 13px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 45px;
+      }
+
+      .hero-image {
+        height: 260px;
+        border-radius: 18px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+      }
+
+      .food-card img {
+        height: 220px;
+      }
+
+      section {
+        padding: 48px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="#home" style="text-decoration:none">
+      Bean & Bloom ☕
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <p class="eyebrow">Your cozy corner</p>
+        <h1>Good coffee.<br>Better moments.</h1>
+        <p>
+          Freshly brewed coffee, delicious treats and a
+          welcoming space to slow down and enjoy your day.
+        </p>
+        <a class="btn" href="#menu">Explore Our Menu →</a>
+      </div>
+
+      <img
+        class="hero-image"
+        src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80"
+        alt="Freshly prepared coffee on a cafe table"
+      >
+    </section>
+
+    <section id="menu">
+      <div class="section-heading">
+        <p class="eyebrow" style="color:#a65e27">Made with care</p>
+        <h2>Our Favourites</h2>
+        <p>A little something for every coffee and food lover.</p>
+      </div>
+
+      <div class="menu-grid">
+        <article class="food-card">
+          <img
+            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80"
+            alt="Iced coffee in a glass"
+            loading="lazy"
+          >
+          <div class="food-info">
+            <h3>Classic Cold Coffee</h3>
+            <p>Chilled, creamy and refreshing.</p>
+            <span class="price">₹129</span>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80"
+            alt="Freshly brewed hot coffee"
+            loading="lazy"
+          >
+          <div class="food-info">
+            <h3>Classic Cappuccino</h3>
+            <p>Rich coffee topped with smooth foam.</p>
+            <span class="price">₹99</span>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <img
+            src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80"
+            alt="Chocolate brownie dessert"
+            loading="lazy"
+          >
+          <div class="food-info">
+            <h3>Chocolate Brownie</h3>
+            <p>A chocolate treat for your sweet cravings.</p>
+            <span class="price">₹89</span>
+          </div>
+        </article>
+      </div>
+
+      <p style="text-align:center;color:#6d7168;font-size:12px;margin-top:22px">
+        Demo menu and prices. Replace with verified business details.
+      </p>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-inner">
+        <p class="eyebrow" style="color:#a65e27">Our little story</p>
+        <h2>More Than Just Coffee</h2>
+        <p>
+          Bean & Bloom is a sample cafe concept built around
+          warm hospitality, comforting flavours and simple
+          moments worth sharing. Make this section your own
+          when adapting the website for a real business.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="eyebrow" style="color:#a65e27">Come say hello</p>
+      <h2>Visit Our Cafe</h2>
+      <p><strong>Address:</strong> Add the real cafe address here</p>
+      <p><strong>Opening hours:</strong> Add verified opening hours</p>
+      <p><strong>Phone:</strong> Add the business phone number</p>
+      <a class="btn" href="#home">Back to Top ↑</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Bean & Bloom Cafe · Sample website portfolio project</p>
+    <p>© <span id="year"></span> Bean & Bloom</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
